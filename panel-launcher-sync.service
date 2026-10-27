@@ -1,0 +1,12 @@
+[Unit]
+Description=KDE Plasma Panel Launcher Sync
+After=plasma-plasmashell.service
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=%h/.local/bin/panel-launcher-watch.sh
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=graphical-session.target
